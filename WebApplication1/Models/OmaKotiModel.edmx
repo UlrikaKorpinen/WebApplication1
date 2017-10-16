@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="WarehouseDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="WarehouseDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="OkLampo">
           <Key>
             <PropertyRef Name="IdLampo" />
@@ -14,15 +14,81 @@
           <Property Name="Huone" Type="nvarchar" MaxLength="50" />
           <Property Name="TavoiteLampo" Type="int" />
           <Property Name="NykyLampo" Type="int" />
+          <Property Name="LampoOn" Type="bit" Nullable="false" />
+          <Property Name="LampoOff" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OkSaunaTila">
+          <Key>
+            <PropertyRef Name="IdSaunanTila" />
+          </Key>
+          <Property Name="IdSaunanTila" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TilaKirjattu" Type="datetime" />
+          <Property Name="SaunanNimi" Type="nvarchar" MaxLength="50" />
+          <Property Name="SaunaOn" Type="datetime" />
+          <Property Name="SaunaOff" Type="datetime" />
+          <Property Name="SaunanTila" Type="bit" Nullable="false" />
+          <Property Name="SaunaTavoitelampo" Type="nvarchar" MaxLength="10" />
+          <Property Name="SaunaNykylampo" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="OkValonTila">
+          <Key>
+            <PropertyRef Name="IdValonTila" />
+          </Key>
+          <Property Name="IdValonTila" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HuoneNimi" Type="nvarchar" MaxLength="50" />
+          <Property Name="ValaisinNimi" Type="nvarchar" MaxLength="50" />
+          <Property Name="ValotOn33" Type="datetime" />
+          <Property Name="Valot33" Type="bit" Nullable="false" />
+          <Property Name="ValotOn66" Type="datetime" />
+          <Property Name="Valot66" Type="bit" Nullable="false" />
+          <Property Name="ValotOn100" Type="datetime" />
+          <Property Name="Valot100" Type="bit" Nullable="false" />
+          <Property Name="ValotOff" Type="datetime" />
+          <Property Name="ValonTilaOff" Type="bit" Nullable="false" />
         </EntityType>
         <EntityContainer Name="WarehouseDBModelStoreContainer">
           <EntitySet Name="OkLampo" EntityType="Self.OkLampo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OkSaunaTila" EntityType="Self.OkSaunaTila" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OkValonTila" EntityType="Self.OkValonTila" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WarehouseDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="WarehouseDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="OkSaunaTilas" EntityType="WarehouseDBModel.OkSaunaTila" />
+          <EntitySet Name="OkValonTilas" EntityType="WarehouseDBModel.OkValonTila" />
+          <EntitySet Name="OkLampoes" EntityType="WarehouseDBModel.OkLampo" />
+        </EntityContainer>
+        <EntityType Name="OkSaunaTila">
+          <Key>
+            <PropertyRef Name="IdSaunanTila" />
+          </Key>
+          <Property Name="IdSaunanTila" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TilaKirjattu" Type="DateTime" Precision="3" />
+          <Property Name="SaunanNimi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SaunanTila" Type="Boolean" Nullable="false" />
+          <Property Name="SaunaOn" Type="DateTime" Precision="3" />
+          <Property Name="SaunaOff" Type="DateTime" Precision="3" />
+          <Property Name="SaunaTavoitelampo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SaunaNykylampo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OkValonTila">
+          <Key>
+            <PropertyRef Name="IdValonTila" />
+          </Key>
+          <Property Name="IdValonTila" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HuoneNimi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ValaisinNimi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ValotOn33" Type="DateTime" Precision="3" />
+          <Property Name="Valot33" Type="Boolean" Nullable="false" />
+          <Property Name="ValotOn66" Type="DateTime" Precision="3" />
+          <Property Name="Valot66" Type="Boolean" Nullable="false" />
+          <Property Name="ValotOn100" Type="DateTime" Precision="3" />
+          <Property Name="Valot100" Type="Boolean" Nullable="false" />
+          <Property Name="ValotOff" Type="DateTime" Precision="3" />
+          <Property Name="ValonTilaOff" Type="Boolean" Nullable="false" />
+        </EntityType>
         <EntityType Name="OkLampo">
           <Key>
             <PropertyRef Name="IdLampo" />
@@ -32,24 +98,56 @@
           <Property Name="Huone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TavoiteLampo" Type="Int32" />
           <Property Name="NykyLampo" Type="Int32" />
+          <Property Name="LampoOn" Type="Boolean" Nullable="false" />
+          <Property Name="LampoOff" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="WarehouseDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="OkLampoes" EntityType="Self.OkLampo" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="WarehouseDBModelStoreContainer" CdmEntityContainer="WarehouseDBEntities">
+          <EntitySetMapping Name="OkSaunaTilas">
+            <EntityTypeMapping TypeName="WarehouseDBModel.OkSaunaTila">
+              <MappingFragment StoreEntitySet="OkSaunaTila">
+                <ScalarProperty Name="SaunaNykylampo" ColumnName="SaunaNykylampo" />
+                <ScalarProperty Name="SaunaTavoitelampo" ColumnName="SaunaTavoitelampo" />
+                <ScalarProperty Name="SaunaOff" ColumnName="SaunaOff" />
+                <ScalarProperty Name="SaunaOn" ColumnName="SaunaOn" />
+                <ScalarProperty Name="SaunanTila" ColumnName="SaunanTila" />
+                <ScalarProperty Name="SaunanNimi" ColumnName="SaunanNimi" />
+                <ScalarProperty Name="TilaKirjattu" ColumnName="TilaKirjattu" />
+                <ScalarProperty Name="IdSaunanTila" ColumnName="IdSaunanTila" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OkValonTilas">
+            <EntityTypeMapping TypeName="WarehouseDBModel.OkValonTila">
+              <MappingFragment StoreEntitySet="OkValonTila">
+                <ScalarProperty Name="ValonTilaOff" ColumnName="ValonTilaOff" />
+                <ScalarProperty Name="ValotOff" ColumnName="ValotOff" />
+                <ScalarProperty Name="Valot100" ColumnName="Valot100" />
+                <ScalarProperty Name="ValotOn100" ColumnName="ValotOn100" />
+                <ScalarProperty Name="Valot66" ColumnName="Valot66" />
+                <ScalarProperty Name="ValotOn66" ColumnName="ValotOn66" />
+                <ScalarProperty Name="Valot33" ColumnName="Valot33" />
+                <ScalarProperty Name="ValotOn33" ColumnName="ValotOn33" />
+                <ScalarProperty Name="ValaisinNimi" ColumnName="ValaisinNimi" />
+                <ScalarProperty Name="HuoneNimi" ColumnName="HuoneNimi" />
+                <ScalarProperty Name="IdValonTila" ColumnName="IdValonTila" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="OkLampoes">
             <EntityTypeMapping TypeName="WarehouseDBModel.OkLampo">
               <MappingFragment StoreEntitySet="OkLampo">
-                <ScalarProperty Name="IdLampo" ColumnName="IdLampo" />
-                <ScalarProperty Name="LampoKirjattu" ColumnName="LampoKirjattu" />
-                <ScalarProperty Name="Huone" ColumnName="Huone" />
-                <ScalarProperty Name="TavoiteLampo" ColumnName="TavoiteLampo" />
+                <ScalarProperty Name="LampoOff" ColumnName="LampoOff" />
+                <ScalarProperty Name="LampoOn" ColumnName="LampoOn" />
                 <ScalarProperty Name="NykyLampo" ColumnName="NykyLampo" />
+                <ScalarProperty Name="TavoiteLampo" ColumnName="TavoiteLampo" />
+                <ScalarProperty Name="Huone" ColumnName="Huone" />
+                <ScalarProperty Name="LampoKirjattu" ColumnName="LampoKirjattu" />
+                <ScalarProperty Name="IdLampo" ColumnName="IdLampo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -1,0 +1,98 @@
+﻿@model WebApplication1.ViewModels.ValoViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OkValonTila</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HuoneNimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HuoneNimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValaisinNimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValaisinNimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValotOn33)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValotOn33)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valot33)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valot33)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValotOn66)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValotOn66)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valot66)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valot66)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValotOn100)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValotOn100)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valot100)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valot100)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValotOff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValotOff)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValonTilaOff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValonTilaOff)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdValonTila }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

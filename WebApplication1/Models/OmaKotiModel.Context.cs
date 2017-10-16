@@ -25,6 +25,8 @@ namespace WebApplication1.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<OkSaunaTila> OkSaunaTilas { get; set; }
+        public virtual DbSet<OkValonTila> OkValonTilas { get; set; }
         public virtual DbSet<OkLampo> OkLampoes { get; set; }
     }
 }

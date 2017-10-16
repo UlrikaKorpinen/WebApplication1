@@ -201,6 +201,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OkLamposController.cs" />
+    <Compile Include="Controllers\OkSaunaTilasController.cs" />
+    <Compile Include="Controllers\OkValonTilasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -208,6 +210,12 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OkLampo.cs">
+      <DependentUpon>OmaKotiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OkSaunaTila.cs">
+      <DependentUpon>OmaKotiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OkValonTila.cs">
       <DependentUpon>OmaKotiModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OmaKotiModel.Context.cs">
@@ -227,6 +235,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\LampoViewModel.cs" />
+    <Compile Include="ViewModels\SaunaViewModel.cs" />
+    <Compile Include="ViewModels\ValoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -245,6 +256,10 @@
       <DependentUpon>OmaKotiModel.edmx</DependentUpon>
       <LastGenOutput>OmaKotiModel.cs</LastGenOutput>
     </Content>
+    <Content Include="OmaKotikuvat\lampo.jpg" />
+    <Content Include="OmaKotikuvat\omakoti.jpg" />
+    <Content Include="OmaKotikuvat\sauna.jpg" />
+    <Content Include="OmaKotikuvat\valo.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -308,6 +323,24 @@
     <Content Include="Views\OkLampos\Details.cshtml" />
     <Content Include="Views\OkLampos\Edit.cshtml" />
     <Content Include="Views\OkLampos\Index.cshtml" />
+    <Content Include="Views\OkSaunaTilas\Create.cshtml" />
+    <Content Include="Views\OkSaunaTilas\Delete.cshtml" />
+    <Content Include="Views\OkSaunaTilas\Details.cshtml" />
+    <Content Include="Views\OkSaunaTilas\Edit.cshtml" />
+    <Content Include="Views\OkSaunaTilas\Index.cshtml" />
+    <Content Include="Views\OkSaunaTilas\SaunaOn.cshtml" />
+    <Content Include="Views\OkSaunaTilas\SaunaOff.cshtml" />
+    <Content Include="Views\OkValonTilas\Create.cshtml" />
+    <Content Include="Views\OkValonTilas\Delete.cshtml" />
+    <Content Include="Views\OkValonTilas\Details.cshtml" />
+    <Content Include="Views\OkValonTilas\Edit.cshtml" />
+    <Content Include="Views\OkValonTilas\Index.cshtml" />
+    <Content Include="Views\OkValonTilas\ValotOff.cshtml" />
+    <Content Include="Views\OkValonTilas\ValotOn100.cshtml" />
+    <Content Include="Views\OkLampos\LampoOn.cshtml" />
+    <Content Include="Views\OkLampos\LampoOff.cshtml" />
+    <Content Include="Views\OkValonTilas\ValotOn66.cshtml" />
+    <Content Include="Views\OkValonTilas\ValotOn33.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

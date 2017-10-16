@@ -9,6 +9,7 @@
 
 </head>
 <body>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -25,12 +26,22 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
+
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
+
+        @*$(document).ready(function () {
+        // body has been loaded
+        $('body').load(function () {
+        // Change the background-image
+        $('omakoti').css('omakoti', 'url(C:\Users\Ulrika\Documents\Mobiilisov\WebApplication1\WebApplication1\OmaKotikuvat\omakoti.jpg)');
+        });
+        });*@
+
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
@@ -40,5 +51,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    
 </body>
 </html>

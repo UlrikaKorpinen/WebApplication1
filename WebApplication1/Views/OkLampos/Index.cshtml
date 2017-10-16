@@ -1,51 +1,70 @@
-﻿@model IEnumerable<WebApplication1.Models.OkLampo>
+﻿@model IEnumerable<WebApplication1.ViewModels.LampoViewModel>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="jumbotronlampo">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.LampoKirjattu)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Huone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TavoiteLampo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NykyLampo)
-        </th>
-        <th></th>
-    </tr>
+    <h2>Lämpötilat</h2>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.LampoKirjattu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Huone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TavoiteLampo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NykyLampo)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdLampo }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdLampo }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdLampo })
-        </td>
-    </tr>
-}
+    <p>
+        @Html.ActionLink("Luo uusi lämpötila", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LampoKirjattu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Huone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TavoiteLampo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NykyLampo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LampoOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LampoOff)
+            </th>
+            <th></th>
+        </tr>
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LampoKirjattu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Huone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TavoiteLampo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NykyLampo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LampoOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LampoOff)
+                </td>
+                <td>
+                    @Html.ActionLink("Päälle", "LampoOn", new { id = item.IdLampo }) |
+                    @Html.ActionLink("Pois", "LampoOff", new { id = item.IdLampo }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IdLampo }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.IdLampo }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IdLampo })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>

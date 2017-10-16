@@ -1,0 +1,42 @@
+﻿@model WebApplication1.ViewModels.SaunaViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OkSaunaTila</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TilaKirjattu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TilaKirjattu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SaunanNimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaunanNimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SaunanTila)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaunanTila)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdSaunanTila }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

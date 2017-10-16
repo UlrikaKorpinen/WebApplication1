@@ -12,14 +12,15 @@ namespace WebApplication1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class OkLampo
+    public partial class OkSaunaTila
     {
-        public int IdLampo { get; set; }
-        public Nullable<System.DateTime> LampoKirjattu { get; set; }
-        public string Huone { get; set; }
-        public Nullable<int> TavoiteLampo { get; set; }
-        public Nullable<int> NykyLampo { get; set; }
-        public bool LampoOn { get; set; }
-        public bool LampoOff { get; set; }
+        public int IdSaunanTila { get; set; }
+        public Nullable<System.DateTime> TilaKirjattu { get; set; }
+        public string SaunanNimi { get; set; }
+        public bool SaunanTila { get; set; }
+        public Nullable<System.DateTime> SaunaOn { get; set; }
+        public Nullable<System.DateTime> SaunaOff { get; set; }
+        public string SaunaTavoitelampo { get; set; }
+        public string SaunaNykylampo { get; set; }
     }
 }

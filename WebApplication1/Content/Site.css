@@ -1,6 +1,63 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    /*background: url('../OmaKotikuvat/omakoti.jpg') no-repeat center center fixed;
+    background-size: cover;
+    -moz-background-size: cover;*/
+    font-size: 12pt;
+    font-family: Trebuchet MS;
+}
+
+.jumbotron{
+    background: url('../OmaKotikuvat/omakoti.jpg') no-repeat center center fixed;
+     background-size: cover;
+    -moz-background-size: cover;
+    width: 100%;
+    height:540px;
+   
+}
+
+div.jumbotronsauna{
+    background: url('../OmaKotikuvat/sauna.jpg') no-repeat center center fixed;
+     background-size: cover;
+    -moz-background-size: cover;
+    width: 100%;
+    height:720px;
+    color: inherit;
+   
+}
+
+div.jumbotrontausta{
+    background-color: black;
+    font-size: 12px !important;
+     background-size: cover;
+    -moz-background-size: cover;
+    width: 500px;
+    height:720px;
+    color: inherit;
+    margin-bottom: 5px;
+    opacity: 0.1;
+   
+}
+
+.jumbotronvalot {
+    //background-image: url('../OmaKotikuvat/valo.jpg');
+    background: url('../OmaKotikuvat/valo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    width: 100%;
+    height: 640px;
+    color: red;
+}
+
+.jumbotronlampo {
+    background: url('../OmaKotikuvat/lampo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    width: 100%;
+    height: 638px;
+    color: red;
+
 }
 
 /* Set padding to keep content from hitting the edges */

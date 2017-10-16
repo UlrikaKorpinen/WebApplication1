@@ -1,0 +1,105 @@
+﻿@model IEnumerable<WebApplication1.ViewModels.ValoViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotronvalot">
+
+    <h2>Valot</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HuoneNimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValaisinNimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valot33)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valot66)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valot100)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValonTilaOff)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValotOn33)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ValotOn66)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ValotOn100)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ValotOff)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HuoneNimi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValaisinNimi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valot33)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valot66)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valot100)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValonTilaOff)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValotOn33)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValotOn66)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValotOn100)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValotOff)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Pois", "ValotOff", new { id = item.IdValonTila }) |
+                    @Html.ActionLink("33 %", "ValotOn33", new { id = item.IdValonTila }) |
+                    @Html.ActionLink("66 %", "ValotOn66", new { id = item.IdValonTila }) |
+                    @Html.ActionLink("100 %", "ValotOn100", new { id = item.IdValonTila }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IdValonTila }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.IdValonTila }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IdValonTila })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+

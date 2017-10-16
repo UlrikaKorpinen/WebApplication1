@@ -1,0 +1,84 @@
+﻿@model IEnumerable<WebApplication1.ViewModels.SaunaViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="~/Scripts/modernizr-2.6.2.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/respond.js"></script>
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css"> 
+
+<div class="w3-container">
+    <div class="jumbotronsauna">
+        <div ckass="jumbotrontausta">
+
+            <h2>Saunatiedot</h2>
+
+            <p>
+                @Html.ActionLink("Luo uusi sauna", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SaunanNimi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SaunaTavoitelampo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SaunaNykylampo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SaunanTila)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SaunaOn)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SaunaOff)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SaunanNimi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SaunaTavoitelampo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SaunaNykylampo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SaunanTila)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SaunaOn)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SaunaOff)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Päälle", "SaunaOn", new { id = item.IdSaunanTila }) |
+                            @Html.ActionLink("Pois", "SaunaOff", new { id = item.IdSaunanTila }) |
+                            @Html.ActionLink("Edit", "Edit", new { id = item.IdSaunanTila }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.IdSaunanTila }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.IdSaunanTila })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
